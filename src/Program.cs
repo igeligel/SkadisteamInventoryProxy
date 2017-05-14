@@ -13,6 +13,7 @@ namespace SkadisteamInventoryProxy
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
+                .UseUrls("http://0.0.0.0:5000")
                 .Build();
 
             host.Run();
