@@ -1,16 +1,21 @@
 # SkadisteamInventoryProxy  by <a href="https://github.com/igeligel">igeligel</a>
 
-<div style="text-align:center"><a href="https://www.paypal.me/kevinpeters96/1"><img src="https://img.shields.io/badge/Donate-Paypal-003087.svg?style=flat" alt="badge Donate" /></a> <a href="https://steamcommunity.com/tradeoffer/new/?partner=68364320&token=CzTCv8JM"><img src="https://img.shields.io/badge/Donate-Steam-000000.svg?style=flat" alt="badge Donate" /></a> <a href="https://github.com/igeligel/BackpackLogin/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT-1da1f2.svg?style=flat" alt="badge License" /></a> </div>
 
-
+<div align="center"> <a href="https://www.paypal.me/kevinpeters96/1"><img src="https://img.shields.io/badge/Donate-Paypal-003087.svg?style=flat" alt="badge Donate" /></a> <a href="https://steamcommunity.com/tradeoffer/new/?partner=68364320&token=CzTCv8JM"><img src="https://img.shields.io/badge/Donate-Steam-000000.svg?style=flat" alt="badge Donate" /></a> <a href="https://github.com/igeligel/BackpackLogin/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT-1da1f2.svg?style=flat" alt="badge License" /></a> </div>
 
 ## Description
 
-> A [.NET Core](https://www.microsoft.com/net/core) Project within a [Docker](https://www.docker.com/) Container to make it possible to easily host a Proxy Service for [Steam Community](http://steamcommunity.com/) Inventory Requests.
-
+> A [.NET Core](https://www.microsoft.com/net/core) Project within a [Docker](https://www.docker.com/) Container to make it possible to easily host a Proxy Service for [Steam Community](http://steamcommunity.com/) Inventory Requests. It has an integrated In-Memory-Cache which is configurable via the settings file.
 
 
 ## Installation
+
+First clone the repository:
+
+```bash
+git clone https://github.com/igeligel/SkadisteamInventoryProxy.git
+cd SkadisteamInventoryProxy
+```
 
 Just run the command:
 
@@ -47,7 +52,12 @@ After you have applied the settings you can start the application and go to: [lo
 
 The whole API is hosted on Port 5000. If you want to change this, change the Port inside [Program.cs](https://github.com/igeligel/SkadisteamInventoryProxy/blob/master/src/Program.cs#L16).
 
+You can also change the Cache time. The Cache Time describes how long an inventory should be cached. You are also able to exclude several Steam Community Id's from Caching via the configuration file. To get examples of the check out the ``/docs`` [folder](https://github.com/igeligel/SkadisteamInventoryProxy/tree/master/docs).
+
+To disable the In-Memory-Cache just set the time to ``0``.
+
 ## Examples
+
 - [Hosted on Digital Ocean (No Production)](http://46.101.102.223/api/inventory/76561198028630048/730/2)
 
 
